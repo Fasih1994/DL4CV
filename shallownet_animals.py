@@ -42,7 +42,7 @@ testY = lb.transform(testY)
 print("[INFO] compiling model...")
 
 opt = SGD(0.005)
-model = ShallowNet.build(widht=32, height=32, depth=3, classes=3)
+model = ShallowNet.build(width=32, height=32, depth=3, classes=3)
 model.compile(optimizer=opt,
               loss='categorical_crossentropy',
               metrics=['accuracy'])
