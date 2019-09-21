@@ -1,6 +1,6 @@
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import classification_report
-from shallownet import ShallowNet
+from pyimagesearch.nn.conv import ShallowNet
 from keras.optimizers import SGD
 from keras.datasets import cifar10
 import matplotlib.pyplot as plt
