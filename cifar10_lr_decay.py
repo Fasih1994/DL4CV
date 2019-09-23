@@ -14,7 +14,7 @@ import argparse
 def step_decay(epoch):
     initial_alpha = 0.01
     drop_every = 5
-    factor = 0.25
+    factor = 0.5
 
     alpha = initial_alpha *(factor ** np.floor((1 + epoch) / drop_every))
 
