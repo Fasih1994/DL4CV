@@ -46,7 +46,7 @@ opt = SGD(lr=0.01, momentum=0.9, nesterov=True)
 model = MiniVGGNet.build(width=32,height=32, depth=3, classes=10)
 model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['acc'])
 
-model.fit(trainX, trainY, validation_data=(trainX, trainY),
+model.fit(trainX, trainY, validation_data=(testX, testY),
           callbacks=callbacks, batch_size=64, epochs=40, verbose=1)
 
 print('[INFO] evaluating model...')
