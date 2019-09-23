@@ -33,7 +33,7 @@ model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy
 fname = os.path.sep.join([args['weights'], "weights-{epoch:03d}-{val_loss:.4f}.hdf5"])
 checkpoints = [ModelCheckpoint(filepath=fname, monitor='val_loss', mode='min',
                                save_best_only=True, verbose=1)]
-callbacks = [checkpoints]
+callbacks = checkpoints
 
 print('[INFO] training model...')
 model.fit(trainX, trainY, validation_data=(testX, testY),
