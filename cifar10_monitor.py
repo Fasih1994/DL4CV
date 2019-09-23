@@ -35,10 +35,8 @@ opt = SGD(lr=0.01, momentum=0.9, nesterov=True)
 model = MiniVGGNet.build(width=32, height=32, depth=3, classes=10)
 model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['acc'])
 
-figPath = os.path.sep.join([args['output']],
-                           "{}.png".format(os.getpgid()))
-jsonPath = os.path.sep.join([args['output']],
-                            "{}.json".format(os.getpgid()))
+figPath = os.path.sep.join([args['output'], "{}.png".format(os.getpgid())])
+jsonPath = os.path.sep.join([args['output'], "{}.json".format(os.getpgid())])
 callbacks = [TrainingMonitor(figPath, jsonPath)]
 
 print("[INFO] training network...")
