@@ -34,7 +34,7 @@ class TrainingMonitor(BaseLogger):
         for (k, v) in logs.items():
             l = self.H.get(k, [])
             l.append(v)
-            self.H[k] = 1
+            self.H[k] = l
 
         if self.jsonPath is not None:
             f = open(self.jsonPath, 'w')
