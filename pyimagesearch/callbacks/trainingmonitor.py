@@ -15,15 +15,14 @@ class TrainingMonitor(BaseLogger):
         self.startAt = startAt
 
     def on_train_begin(self, logs={}):
-        # initialize history directory
-        self.H = {}
 
-        # if the json history file exisit load the training history
+        # initialize the history dictionary
+        self.H = {}
+        # if the JSON history path exists, load the training history
         if self.jsonPath is not None:
             if os.path.exists(self.jsonPath):
                 self.H = json.loads(open(self.jsonPath).read())
-
-                # if starting epoch is supplied
+                # check to see if a starting epoch was supplied
                 if self.startAt > 0:
                     # loop over the entries in the history log and
                     # trim any entries that are past the starting
